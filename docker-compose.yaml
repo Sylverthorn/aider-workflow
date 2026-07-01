@@ -1,0 +1,14 @@
+services:
+  aider-workflow:
+    image: aider-workflow-image:latest
+    container_name: aider-station
+    restart: unless-stopped
+    user: "${USER_UID:-1000}:${USER_GID:-1000}"
+    environment:
+      - HOME=/tmp
+    env_file:
+      - ${HOME}/aider-workflow/aider-workflow.env
+    volumes:
+      - ${HOME}/Documents/DEV:${HOME}/Documents/DEV
+      - ${HOME}/.gitconfig:${HOME}/.gitconfig:ro
+      - ${HOME}/aider-workflow/.aider.conf.yml:/tmp/.aider.conf.yml:ro

@@ -1,0 +1,5 @@
+# Ignorer les clés API
+*.env
+
+# Ne pas ignorer le fichier d'exemple s'il existe
+!env.example

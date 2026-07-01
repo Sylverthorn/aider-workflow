@@ -1,0 +1,9 @@
+# ~/.aider.conf.yml
+
+# Forcer l'utilisation de RTK pour la compression des erreurs
+lint-cmd:
+  - "python: rtk ruff check"
+  - "javascript: rtk eslint"
+  - "typescript: rtk eslint"
+  
+test-cmd: "rtk pytest"
